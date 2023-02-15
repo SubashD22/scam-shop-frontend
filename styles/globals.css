@@ -173,8 +173,19 @@ width: 100%;
   width: 450px;
   height: 450px;
 }
-
-
+@media screen and (max-width: 600px){
+  .hero-banner-container{
+    height: 450px;
+    position: relative;
+  }
+  .hero-banner-image{
+    position: absolute;
+    top: 10%;
+    right:20%;
+    width: 250px;
+    height: 250px;
+  }
+}
 .desc{
 position: absolute;
 right: 10%;
@@ -622,13 +633,13 @@ margin-top: 160px;
 
 @media screen and (max-width:800px) {
   .hero-banner-container{
-    height: 560px;
+    height: 450px;
   }
   .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: 5%;
   }
   .footer-banner-container{
     height: 560px;
@@ -665,14 +676,18 @@ margin-top: 160px;
     line-height: 1.3;
   }
   .hero-banner-container h1{
-    font-size: 50px;
+    font-size: 4rem;
   }
  .hero-banner-container h3{
-    font-size: 40px;
+    font-size: 2rem;
   }
   .hero-banner-container button{
-    margin-top: 90px;
+    margin-top: 55px;
     z-index: 10000;
+  }
+  .beats-solo{
+    margin-top: -30px;
+    font-weight: bolder;
   }
   .desc{
    bottom: 60px;
