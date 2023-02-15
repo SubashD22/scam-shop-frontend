@@ -66,21 +66,10 @@ const ProductDetails = ({ product }) => {
         </div>
     )
 }
-export const getStaticPaths = async () => {
-
-    const products = await axios.get('http://localhost:5000/api/allproducts')
-    const paths = products.data.map((p) => ({
-        params: {
-            id: p.slug
-        }
-    }));
-    return {
-        paths,
-        fallback: 'blocking'
-    }
-}
-export const getStaticProps = async ({ params: { id } }) => {
-    const product = await axios.get(`http://localhost:5000/api/products/${id}`)
+export const getServerSideProps = async (ctx) => {
+    const { id } = ctx.params
+    const domain = process.env.NODE_ENV === 'development' ? process.env.NEXT_PUBLIC_DEV_URL : process.env.NEXT_PUBLIC_PROD_URL
+    const product = await axios.get(`${domain}/api/products/${id}`)
 
     return {
         props: {

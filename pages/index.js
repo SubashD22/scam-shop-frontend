@@ -17,8 +17,9 @@ export default function Home({products,banner}) {
   )
 }
 export const getServerSideProps = async()=>{
-  const products = await axios.get('http://localhost:5000/api/products')
-  const banner = await axios.get('http://localhost:5000/api/banner')
+  const domain = process.env.NODE_ENV === 'development' ? process.env.NEXT_PUBLIC_DEV_URL : process.env.NEXT_PUBLIC_PROD_URL
+  const products = await axios.get(`${domain}/api/products`)
+  const banner = await axios.get(`${domain}/api/banner`)
   return{props:{
     products:products.data,banner:banner.data
   }}
