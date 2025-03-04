@@ -525,11 +525,10 @@ span.text-red {
   cursor: pointer;
 }
 .quantity-desc .minus {
-  border-right: 1px solid gray;
   color: #f02d34;
 }
 .quantity-desc .num {
-  border-right: 1px solid gray;
+  border: 1px solid gray;
   font-size: 20px;
 }
 .quantity-desc .plus {
@@ -830,7 +829,7 @@ label {
 }
 s {
   text-decoration: line-through;
-  text-decoration-thickness: 0.2em;
+  text-decoration-thickness: 0.1em;
 }
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {

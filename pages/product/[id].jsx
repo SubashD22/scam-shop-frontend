@@ -54,10 +54,10 @@ const ProductDetails = ({ product }) => {
           <h4>Details:</h4>
           <p>{description}</p>
           <p className="price">
-            Rs.
+            {`Rs. `} 
             {discountPrice ? (
               <>
-                <s>{price}</s> {discountPrice}
+                <s>{`${price}`}</s> {discountPrice}
               </>
             ) : (
               price
